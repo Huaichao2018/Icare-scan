@@ -1,42 +1,82 @@
-# 项目文件结构说明
+<p align="center">
+  <img src="icon.png" alt="App icon" width="140" />
+</p>
 
-这是根据原 Word 文档中合并粘贴的源码，按 uni-app 常见项目约定拆分出的文件结构。**文件名和目录是我根据每个代码块的功能推测命名的，并非从文档中读取的真实路径**，如果和你实际 GitHub 仓库不一致，请告诉我实际路径，我可以重新调整。
+<h1 align="center">Icare Scan</h1>
+
+<p align="center">
+  An Android application for the automated digitization and structuring of clinical laboratory reports, intended to support downstream research in <em>clinical laboratory omics</em> (Clinlabomics).
+</p>
+
+<p align="center">
+  <a href="https://github.com/Huaichao2018/Icare-scan/blob/main/com.icare.scan.apk.1.1.1">Download com.icare.scan.apk.1.1.1</a>
+</p>
+
+---
+
+## Overview
+
+Icare Scan is a mobile (Android) application designed to bridge the gap between unstructured, paper-based (or image-based) clinical laboratory reports and structured, machine-readable data suitable for quantitative research. By capturing a photograph of a conventional laboratory report, the application performs optical character recognition (OCR) and subsequent parsing to extract patient information, test items, and reference values into a structured schema. This addresses a common bottleneck in retrospective and prospective clinical laboratory data collection, where source reports are frequently distributed as printed documents or unstructured images rather than structured electronic records.
+
+The resulting structured output is intended to facilitate downstream analyses in clinical laboratory omics (Clinlabomics) research, including cohort-level aggregation, longitudinal trend analysis, and integration with other structured clinical or -omics data sources.
+
+## Platform
+
+This application is distributed as a native Android package (`.apk`) and is intended for installation on Android mobile devices. It is not a web application, desktop application, or cross-platform build.
+
+**Installation**
+
+1. Download the package: [com.icare.scan.apk.1.1.1](https://github.com/Huaichao2018/Icare-scan/blob/main/com.icare.scan.apk.1.1.1)
+2. Transfer the `.apk` file to an Android device, if not downloaded directly on-device.
+3. Enable installation from unknown sources (if required by the device's Android version), and install the package.
+
+## Core Workflow
+
+1. **Image acquisition** — the user photographs a conventional laboratory report using the device camera, or selects an existing image.
+2. **Optical character recognition** — the captured image is submitted to an OCR service, returning text content (including a Markdown-formatted table representation of tabular report data).
+3. **Structured parsing** — the recognized text is parsed to extract the reporting institution, report title, patient/demographic fields, and the tabular panel of test items (analyte, result, reference range, and flags for out-of-range values).
+4. **Local storage and export** — structured records are persisted locally (SQLite) and may be exported (e.g., to Excel) for further statistical or bioinformatic analysis.
+
+## Project File Structure
+
+The structure below was reconstructed from a source document in which multiple page components had been concatenated into a single file. File names and directories are inferred from each component's function and navigation context; they may not correspond exactly to the original repository layout.
 
 ```
 project/
 ├── pages/
 │   ├── index/
-│   │   ├── index.vue        # 首页 / 使用说明（navRecognize），点击"开始扫描"跳转 scanner
-│   │   └── scanner.vue       # 扫描记录列表（navScan，scroll-view + exportToExcel）
+│   │   ├── index.vue        # Home / instructions page (navRecognize); "Start Scan" navigates to scanner
+│   │   └── scanner.vue       # Scan records list (navScan, scroll-view + exportToExcel)
 │   ├── records/
-│   │   └── records.vue       # 记录列表（navRecords，mescroll 分页 + selectExportType）
+│   │   └── records.vue       # Records list (navRecords, mescroll pagination + selectExportType)
 │   ├── plugins/
-│   │   ├── addPage.vue       # 新增/编辑记录页（navAddRecord，图片上传 + OCR识别）
-│   │   └── reportDetail.vue  # 报告详情页（navReportDetail，解析 markdown 报告 + 导出Excel）
+│   │   ├── addPage.vue       # Add/edit record page (navAddRecord, image upload + OCR recognition)
+│   │   └── reportDetail.vue  # Report detail page (navReportDetail, parses markdown report + Excel export)
 │   └── mine/
-│       └── about.vue         # 关于/反馈/语言切换页（navAbout）
+│       └── about.vue         # About / feedback / language switch page (navAbout)
 └── common/
     ├── lang/
-    │   └── i18n.js            # 中英文文案配置
+    │   └── i18n.js            # Chinese/English text configuration
     └── mixin/
-        └── lang-mixin.js       # 语言切换 mixin（$lang 方法 + switchLang）
+        └── lang-mixin.js       # Language switching mixin ($lang method + switchLang)
 ```
 
-## 推测依据
+### Basis for the inferred structure
 
-- 每个 `.vue` 文件的目录名来自其 `onShow`/`onLoad` 中设置的导航栏标题 key（如 `navRecords`、`navScan` 等）和主要业务逻辑。
-- `records.vue` 与 `scanner.vue` 内容相似但不同（分页方式、导出方法不同），推测是两个独立的列表页面（可能对应不同 Tab），如果实际上是同一页面的新旧版本，请告诉我合并。
-- `i18n.js` 和 `lang-mixin.js` 按代码里的注释直接得名。
-- 文档中被引用但未包含源码的模块（如 `@/db/sqlite.js`、`@/db/action.js`、`image-tools`）未生成，因为原文档中没有这部分源码。
+- Each `.vue` file's directory name derives from the navigation bar title key set in its `onShow`/`onLoad` lifecycle hook (e.g. `navRecords`, `navScan`) and its principal business logic.
+- `records.vue` and `scanner.vue` share similar but non-identical implementations (differing pagination and export methods); they are provisionally treated as two distinct list views (potentially corresponding to separate tabs). If these instead represent successive revisions of a single page, the repository maintainer should advise so they may be reconciled.
+- `i18n.js` and `lang-mixin.js` are named according to the descriptive comments present in the source.
+- Modules referenced but not present in the source document (e.g. `@/db/sqlite.js`, `@/db/action.js`, `image-tools`) are not reproduced here, as their implementations were not included in the original material.
 
-如果你能提供 GitHub 仓库地址或者实际文件路径，我可以按真实结构重新整理。
+If a canonical GitHub repository structure is available, this layout can be revised to match it exactly.
 
-## 关于英文化
+## Notes on Localization
 
-已将所有注释、界面文案、状态值（`待选图`→`Pending Selection`、`识别中`→`Recognizing`、`识别完成`→`Completed`）统一翻译为英文，`i18n.js` 的 `zh` 字典值也一并译成英文（结构和 key 未动）。
+All source comments, interface strings, and internal status values (`待选图` → `Pending Selection`, `识别中` → `Recognizing`, `识别完成` → `Completed`) have been translated to English; the `zh` locale dictionary in `i18n.js` was likewise translated, with keys and structure preserved.
 
-**唯一保留中文的地方**在 `pages/plugins/reportDetail.vue` 的报告解析逻辑里：
-- `titleLine.split('检验报告单')` 及相邻两行
+One exception is retained by design, in the report-parsing logic of `pages/plugins/reportDetail.vue`:
+
+- `titleLine.split('检验报告单')` and the two adjacent lines
 - `key.includes('诊断') || key.includes('姓名')`
 
-这两处不是界面文案，而是用来匹配 **OCR 识别出的中文体检报告原文**（报告标题、诊断/姓名字段名）。原始体检单本身是中文的，如果把这里也改成英文关键字，会导致无法从真实报告中正确解析出医院名称、标题和高亮字段，功能会失效。如果你的报告源文本以后也会换成英文版，告诉我具体英文关键字，我再改。
+These are not interface text but pattern-matching literals applied to the OCR output of the source laboratory report itself (report title, and the "diagnosis"/"name" field labels), which is inherently Chinese-language. Translating these literals to English would decouple the parser from its input and cause extraction of the hospital name, report title, and highlighted fields to fail against real-world reports. Should the source reports be transitioned to an English-language format, the corresponding English keywords should be supplied so this logic can be updated accordingly.
