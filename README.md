@@ -26,7 +26,7 @@ This application is distributed as a native Android package (`.apk`) and is inte
 
 **Installation**
 
-1. Download the package: [com.icare.scan.apk.1.1.1]
+1. Download the package: com.icare.scan.apk.1.1.1
 2. Transfer the `.apk` file to an Android device, if not downloaded directly on-device.
 3. Enable installation from unknown sources (if required by the device's Android version), and install the package.
 
