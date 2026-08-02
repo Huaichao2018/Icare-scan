@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Huaichao2018/Icare-scan/blob/main/com.icare.scan.apk.1.1.1">Download com.icare.scan.apk.1.1.1</a>
+  Download com.icare.scan.apk.1.1.1</a>
 </p>
 
 ---
