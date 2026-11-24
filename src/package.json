@@ -1,0 +1,27 @@
+{
+  "name": "icarescan",
+  "version": "1.0.0",
+  "description": "IcareScan: An Android application for automated recognition and structured extraction of clinical laboratory reports.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"No automated unit tests configured; build and verify via HBuilderX (UniApp Vue 3 / Android).\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huaichao2018/Icare-scan.git"
+  },
+  "keywords": [
+    "clinical-laboratory-reports",
+    "ocr",
+    "information-extraction",
+    "uniapp",
+    "android",
+    "real-world-data"
+  ],
+  "author": "IcareScan Development Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "image-tools": "^1.4.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,99 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+		"^jnpf-(.*)": "@/components/jnpf/jnpf-$1/index.vue"
+	},
+	"pages": [
+		// {
+		// 	"path": "pages/discern/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "识别记录"
+		// 	}
+		// },
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "在线识别"
+			}
+		},
+		// #ifdef APP-PLUS
+		{
+			"path": "pages/index/scanner",
+			"style": {
+				"navigationBarTitleText": "记录"
+			}
+		},
+		// #endif
+		{
+			"path": "pages/report/ocr-report",
+			"style": {
+				"navigationBarTitleText": "报告详情"
+			}
+		},
+		{
+			"path": "pages/regard/index",
+			"style": {
+				"navigationBarTitleText": "关于"
+			}
+		},
+		{
+			"path": "pages/plugins/scanner",
+			"style": {
+				"navigationBarTitleText": "扫描",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#ffffff",
+								"text": "新增",
+								"fontSize": "12px"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/plugins/addPage",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#007aff",
+		"backgroundColor": "#007aff"
+		// "navigationStyle": "custom"
+	},
+	"tabBar": {
+		"custom": true,
+		"borderStyle": "blue",
+		"backgroundColor": "#33adff",
+		"color": "#000000",
+		"selectedColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/scanner",
+				"iconPath": "static/report.png",
+				"selectedIconPath": "static/reportHL.png"
+				// "text": "记录"
+			},
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/discern.png",
+				"selectedIconPath": "static/discernHL.png"
+				// "text": "识别"
+			},
+			{
+				"pagePath": "pages/regard/index",
+				"iconPath": "static/setting.png",
+				"selectedIconPath": "static/settingHL.png"
+				// "text": "关于"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}
