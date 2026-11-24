@@ -1,6 +1,6 @@
 {
   "name": "icarescan",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "IcareScan: An Android application for automated recognition and structured extraction of clinical laboratory reports.",
   "main": "main.js",
   "scripts": {

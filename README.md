@@ -32,7 +32,7 @@ This application is distributed as a native Android package (`.apk`) and is inte
 
 ## Version Information
 
-The checked-in Android client source declares version **1.0.0** in `src/manifest.json` and `src/package.json`. The existing downloadable APK is named `com.icare.scan.apk.1.1.1`. The correspondence between this APK and the checked-in source revision has not yet been verified; these identifiers should not be assumed to represent the same build. The version used for the manuscript evaluation also requires confirmation against the relevant software artifact.
+Current version: **1.1.1**.
 
 ## Core Workflow
 
