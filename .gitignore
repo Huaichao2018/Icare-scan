@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+src/node_modules/
+
+# UniApp / HBuilderX build artifacts and private signing certificates
+src/unpackage/dist/
+src/unpackage/cache/
+src/unpackage/release/
+*.keystore
+*.jks
+*.apk
+*.wgt
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
