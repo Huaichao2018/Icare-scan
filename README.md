@@ -103,6 +103,10 @@ If a canonical GitHub repository structure is available, this layout can be revi
 
 IcareScan provides Chinese and English interface options. The current report-parsing rules are designed for Chinese-language laboratory reports and retain Chinese keywords to identify report titles and selected fields. Supporting English-language reports would require adapting and validating these parsing rules.
 
+## Evaluation Data
+
+The item-level evaluation data are available in the [evaluation](evaluation/) directory, including extracted results, manually verified reference values, and evaluation annotations. See the [evaluation data documentation](evaluation/README.md) for file descriptions, the data schema, and evaluation definitions.
+
 ## Citation
 
 If you use IcareScan in your research, please cite the accompanying *SoftwareX* article (citation details will be updated upon publication):
