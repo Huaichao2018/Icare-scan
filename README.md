@@ -97,14 +97,7 @@ If a canonical GitHub repository structure is available, this layout can be revi
 
 ## Notes on Localization
 
-All source comments, interface strings, and internal status values (`待选图` → `Pending Selection`, `识别中` → `Recognizing`, `识别完成` → `Completed`) have been translated to English; the `zh` locale dictionary in `i18n.js` was likewise translated, with keys and structure preserved.
-
-One exception is retained by design, in the report-parsing logic of `pages/plugins/reportDetail.vue`:
-
-- `titleLine.split('检验报告单')` and the two adjacent lines
-- `key.includes('诊断') || key.includes('姓名')`
-
-These are not interface text but pattern-matching literals applied to the OCR output of the source laboratory report itself (report title, and the "diagnosis"/"name" field labels), which is inherently Chinese-language. Translating these literals to English would decouple the parser from its input and cause extraction of the hospital name, report title, and highlighted fields to fail against real-world reports. Should the source reports be transitioned to an English-language format, the corresponding English keywords should be supplied so this logic can be updated accordingly.
+IcareScan provides Chinese and English interface options. The current report-parsing rules are designed for Chinese-language laboratory reports and retain Chinese keywords to identify report titles and selected fields. Supporting English-language reports would require adapting and validating these parsing rules.
 
 ## Citation
 
