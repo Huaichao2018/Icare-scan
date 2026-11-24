@@ -182,14 +182,6 @@ The [`evaluation/`](evaluation/) directory provides the complete, de-identified,
 
 ---
 
-## 8. Citation
-
-If you use IcareScan in your research, please cite the accompanying *SoftwareX* article (citation details will be updated upon publication):
-
-> Tang H, Zhou X, Mo B, Wang H, Guo X, Peng Y, Liao Y, Huang J, Luo H, Li S. *IcareScan: A Tool for Automated Recognition and Structured Extraction of Clinical Laboratory Reports.* SoftwareX (submitted).
-
----
-
-## 9. License
+## 8. License
 
 This project is licensed under the **Apache License, Version 2.0** — see the [LICENSE](LICENSE) file for details.
