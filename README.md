@@ -59,8 +59,6 @@ Current version: **1.1.1**.
 
 The Android client depends on an external backend relay for OCR recognition. The default relay is identified in [`src/config.js`](src/config.js) as a service operated by **Chengdu Qianli Zhiwai Technology Co., Ltd.**, forwarding requests to the **iFLYTEK Open Platform**. Its endpoint can be changed through `ocrApiUrl`.
 
-This repository currently includes the Android client source but does not include the backend relay implementation. Running OCR therefore requires access to a compatible relay service. The exact iFLYTEK OCR product and version, applicable service terms, and image-retention and deletion policies for both the relay and OCR provider have not yet been documented in this repository and require confirmation.
-
 ## Project File Structure
 
 The following tree shows the main Android client source files and evaluation materials available in this repository. The current client source is located in `src/`.
