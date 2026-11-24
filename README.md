@@ -38,10 +38,10 @@ The checked-in Android client source declares version **1.0.0** in `src/manifest
 
 ![IcareScan workflow](Workflow.png)
 
-*Workflow overview. Users manually de-identify report images before capture or import. Verification and correction are performed in external spreadsheet tools after export.*
+*Workflow overview. *
 
-1. **Manual Pre-Upload De-identification (User Responsibility):**
-   IcareScan **does not perform automatic image de-identification**. Users must mask or remove patient-identifying information before capturing or importing laboratory report images.
+1. **Manual Pre-Upload De-identification :**
+   IcareScan **does not perform automatic image de-identification**. Users should mask or remove patient-identifying information before capturing or importing laboratory report images.
 2. **Image Acquisition & Task Management (`src/pages/plugins/addPage.vue`):**
    Users create a recognition task (assigned a unique 6-digit task ID `billNo`), capture or select up to 100 images from the device camera or photo gallery, preview/remove images, save drafts locally, or submit the task for OCR.
 3. **Remote OCR Transmission (`src/config.js`, `src/pages/plugins/addPage.vue`):**
@@ -107,14 +107,6 @@ IcareScan provides Chinese and English interface options. The current report-par
 ## Evaluation Data
 
 The item-level evaluation data are available in the [evaluation](evaluation/) directory, including extracted results, manually verified reference values, and evaluation annotations. See the [evaluation data documentation](evaluation/README.md) for file descriptions, the data schema, and evaluation definitions.
-
-## Citation
-
-If you use IcareScan in your research, please cite the accompanying manuscript (citation details will be updated upon publication):
-
-> Tang H, Zhou X, Mo B, Wang H, Guo X, Peng Y, Liao Y, Huang J, Luo H, Li S. *IcareScan: A Tool for Automated Recognition and Structured Extraction of Clinical Laboratory Reports.* Unpublished manuscript.
-
----
 
 ## License
 
