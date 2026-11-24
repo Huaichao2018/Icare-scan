@@ -1,6 +1,6 @@
 # IcareScan Multi-Hospital Evaluation Dataset
 
-This directory contains the complete, de-identified, item-level evaluation dataset supporting the *SoftwareX* manuscript for **IcareScan** (`V1`).
+This directory contains the complete, de-identified, item-level evaluation dataset supporting the *SoftwareX* manuscript for **IcareScan** (`V1.1.1`).
 
 ## Files
 
